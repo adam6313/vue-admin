@@ -1,0 +1,1 @@
+/* eslint-disable */  export default ({Login:'登入',Acc:'帳號',Pwd:'密碼',enterAcc:'請輸入帳號',enterPwd:'請輸入密碼',})

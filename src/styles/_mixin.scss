@@ -1,0 +1,62 @@
+@mixin size($width: 100%, $height: $width)
+{
+    width: $width;
+    height: $height;
+}
+
+@mixin clearfix
+{
+    &:after
+    {
+        display: table;
+        clear: both;
+
+        content: '';
+    }
+}
+
+@mixin opacity($opacity)
+{
+    opacity: $opacity;
+
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin position($position, $args)
+{
+    position: $position;
+
+    @each $o in top right bottom left
+    {
+        $i: index($args, $o);
+
+        @if $i and $i+1 <=length($args) and type-of(nth($args, $i + 1))==number
+        {
+            #{$o}: nth($args, $i + 1);
+        }
+    }
+}
+
+// Positioning helpers
+@mixin absolute($args: '')
+{
+    @include position(absolute, $args);
+}
+
+@mixin fixed($args: '')
+{
+    @include position(fixed, $args);
+}
+
+@mixin relative($args: '')
+{
+    @include position(relative, $args);
+}
+
+@mixin Flex($row: center, $column: center)
+{
+    display: flex;
+    align-items: $column;
+    justify-content: $row;
+}

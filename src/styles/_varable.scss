@@ -1,0 +1,37 @@
+$w: #fff;
+
+%init {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  /* margin padding 標準化 */
+  body, dl, dt, dd, ul, ol, li, pre, form, fieldset, input, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+  }
+  /* 標題 font-size 的標化 */
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+  }
+  ul, ol {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+%VueTransition {
+  .fade-enter-active,
+  .fade-leave-active
+  {
+      transition: opacity .3s;
+  }
+
+  .fade-enter,
+  .fade-leave-active
+  {
+      opacity: 0;
+  }
+}
