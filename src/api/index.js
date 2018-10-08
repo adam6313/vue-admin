@@ -1,4 +1,4 @@
-import api from './service';
+import api from "./service";
 
 // 倒入所有介面
 const install = Vue => {
@@ -8,8 +8,8 @@ const install = Vue => {
     $api: {
       get() {
         return api;
-      },
-    },
+      }
+    }
   });
 };
 

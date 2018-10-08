@@ -8,28 +8,27 @@
 </template>
 
 <script>
-import { register_router } from '@/register';
-import { isArray } from '@/utils';
+import { register_router } from "@/register";
+import { isArray } from "@/utils";
 
 export default {
-  name: 'SidebarMenu',
+  name: "SidebarMenu",
   data() {
     return {
-      Data: {},
+      Data: {}
     };
   },
   mounted() {
     register_router.forEach(({ name }) => {
-      const [Group, item] = name.split('-');
+      const [Group, item] = name.split("-");
       if (!isArray(this.Data[Group])) {
         this.$set(this.Data, Group, []);
       }
       this.Data[Group].push({
         name: item,
-        path: item,
+        path: item
       });
-    })
-  },
+    });
+  }
 };
-
 </script>

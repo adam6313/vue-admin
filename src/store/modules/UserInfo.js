@@ -1,13 +1,13 @@
-import types from '../mutation-types';
+import types from "../mutation-types";
 
 const state = {
-    userInfo: {},
+  userInfo: {}
 };
-  
+
 const mutations = {
   [types.USERINFO](state, userInfo) {
     state.userInfo = userInfo;
-  },
+  }
 };
 
 const actions = {
@@ -22,17 +22,17 @@ const actions = {
    * reset userInfo
    */
   Action_RestUserInfo({ commit }) {
-    commit(types.USERINFO, '');
-  },
+    commit(types.USERINFO, "");
+  }
 };
 
 const getters = {
-  Getter_userInfo: state => state.userInfo,
+  Getter_userInfo: state => state.userInfo
 };
 
 export default {
   state,
   mutations,
   actions,
-  getters,
+  getters
 };

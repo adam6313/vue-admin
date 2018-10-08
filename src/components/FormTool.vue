@@ -12,39 +12,38 @@
 </template>
 
 <script>
-
 export default {
-  name: 'FormTool',
+  name: "FormTool",
   props: {
     Instance: {
       type: Object,
-      default: () => {},
+      default: () => {}
     },
     Button: {
       type: String,
-      default: () => '',
+      default: () => ""
     },
     LabelPosition: {
       type: String,
-      default: () => 'top', // left、top
+      default: () => "top" // left、top
     },
     inline: {
       type: Boolean,
-      default: () => false,
+      default: () => false
     },
     Btn_long: {
       type: Boolean,
-      default: () => false,
+      default: () => false
     },
     loading: {
       type: Boolean,
-      default: () => false,
-    },
+      default: () => false
+    }
   },
   data() {
     return {
       model: {},
-      GetInstanceKeys: this.Instance ? Object.keys(this.Instance) : [],
+      GetInstanceKeys: this.Instance ? Object.keys(this.Instance) : []
     };
   },
   computed: {
@@ -53,20 +52,20 @@ export default {
         pre[current] = [
           {
             required: this.Instance[current].required,
-            trigger: 'change',
-            message: ' ',
+            trigger: "change",
+            message: " "
           }
         ];
         return pre;
       }, {});
-    },
+    }
   },
   created() {
     if (!this.GetInstanceKeys) {
       return;
     }
     this.GetInstanceKeys.forEach(item =>
-      this.$set(this.model, item, `${this.Instance[item].value}` || '')
+      this.$set(this.model, item, `${this.Instance[item].value}` || "")
     );
   },
   methods: {
@@ -76,7 +75,7 @@ export default {
         return;
       }
       this.$emit("handleResult", this.model);
-    },
-  },
+    }
+  }
 };
 </script>

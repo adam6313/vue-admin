@@ -5,7 +5,6 @@
 
 <script>
 export default {
-  name: 'Group1-Item1',
-}
+  name: "Group1-Item1"
+};
 </script>
-

@@ -2741,10 +2741,6 @@ detect-node@^2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
 
-device-tool@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/device-tool/-/device-tool-1.0.13.tgz#ae207714a10d3cfc2ecf29925568b099d581c487"
-
 diff@3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
@@ -3335,7 +3331,7 @@ fast-diff@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/fast-diff/-/fast-diff-1.1.2.tgz#4b62c42b8e03de3f848460b639079920695d0154"
 
-fast-glob@^2.0.2:
+fast-glob@^2.0.2, fast-glob@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-2.2.2.tgz#71723338ac9b4e0e2fff1d6748a2a13d5ed352bf"
   dependencies:
@@ -6419,6 +6415,10 @@ prettier@1.13.7:
   version "1.13.7"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.7.tgz#850f3b8af784a49a6ea2d2eaa7ed1428a34b7281"
 
+prettier@1.14.3:
+  version "1.14.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.3.tgz#90238dd4c0684b7edce5f83b0fb7328e48bd0895"
+
 prettier@^1.12.1:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.14.2.tgz#0ac1c6e1a90baa22a62925f41963c841983282f9"
@@ -8143,6 +8143,16 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+vue-auto-routing@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/vue-auto-routing/-/vue-auto-routing-0.2.0.tgz#5a3e3ddfe54b912061a55a57cdc3a0a1fdff25ff"
+  dependencies:
+    vue-route-generator "^0.2.1"
+
+vue-cli-plugin-auto-routing@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-auto-routing/-/vue-cli-plugin-auto-routing-0.1.2.tgz#18265f18970ff328644713b49dbbb64ddef09ef9"
+
 vue-cli-plugin-i18n@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-i18n/-/vue-cli-plugin-i18n-0.5.0.tgz#1714a035626d893643141b7b14db60bb4d78ab53"
@@ -8164,12 +8174,6 @@ vue-cli-plugin-pug@^1.0.5:
   dependencies:
     pug "^2.0.3"
     pug-plain-loader "^1.0.0"
-
-vue-directive-device@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vue-directive-device/-/vue-directive-device-0.0.1.tgz#562925ca33b11a7539145d86cf7b33ca2a36fc46"
-  dependencies:
-    device-tool "^1.0.13"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
@@ -8199,6 +8203,17 @@ vue-loader@^15.3.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-route-generator@^0.2.1:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/vue-route-generator/-/vue-route-generator-0.2.2.tgz#71b3f3fdb55b1f7d958bc75696114940aa155088"
+  dependencies:
+    fast-glob "^2.2.2"
+    prettier "1.14.3"
+
+vue-router-layout@^0.1.2:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/vue-router-layout/-/vue-router-layout-0.1.3.tgz#116c51a9fb2873703d405f413ec01126fe2d7a8b"
 
 vue-router@^3.0.1:
   version "3.0.1"
@@ -8259,6 +8274,10 @@ wcwidth@^1.0.1:
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
+
+webpack-auto-inject-version@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/webpack-auto-inject-version/-/webpack-auto-inject-version-1.1.0.tgz#2b87251f254de673840bfd811faed8f37c0fe63e"
 
 webpack-bundle-analyzer@^2.13.1:
   version "2.13.1"

@@ -10,25 +10,26 @@ export const oneOf = (value, validList) => validList.includes(value);
  * @param { Array } arr
  * @returns { Boolean }
  */
-export const isArray = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) === '[object Array]';
-};
+export const isArray =
+  Array.isArray ||
+  function(arr) {
+    return Object.prototype.toString.call(arr) === "[object Array]";
+  };
 
 /**
  * 檢查是否為Object
  * @param { * } value
  * @returns { Boolean }
  */
-export const isObject = value => Object.prototype.toString.call(value) === '[object Object]';
+export const isObject = value =>
+  Object.prototype.toString.call(value) === "[object Object]";
 
 /**
  * 是否為 Function
  * @param { Function } fn
  * @returns { Boolean }
  */
-export const isFunction = fn => (
-  !!(fn && fn.constructor && fn.call && fn.apply)
-);
+export const isFunction = fn => !!(fn && fn.constructor && fn.call && fn.apply);
 
 /**
  * 轉換為FormData格式
@@ -38,7 +39,8 @@ export const ToFormData = Params => {
   const data = new FormData();
   Object.keys(Params).forEach(key => {
     if (isArray(Params[key])) {
-      if (Params[key].length !== 0) Params[key].forEach(v => (data.append(key, v)));
+      if (Params[key].length !== 0)
+        Params[key].forEach(v => data.append(key, v));
     } else data.append(key, Params[key]);
   });
   return data;
@@ -49,11 +51,8 @@ export const ToFormData = Params => {
  * @param { String } code
  * @param { String } substring
  */
-export const FormatCode = (code, substring) => (
-  code.includes(substring) ?
-    code.substr(0, code.indexOf(substring)) :
-    code
-);
+export const FormatCode = (code, substring) =>
+  code.includes(substring) ? code.substr(0, code.indexOf(substring)) : code;
 
 /**
  * 找出陣列內 相同/不相同 對象
@@ -61,7 +60,8 @@ export const FormatCode = (code, substring) => (
  * @param { Array } xs
  * @param { Array } ys
  */
-export const intersectwith = (f, xs, ys) => xs.filter(x => ys.some(y => f(x, y)));
+export const intersectwith = (f, xs, ys) =>
+  xs.filter(x => ys.some(y => f(x, y)));
 
 /**
  * 比較兩值是否相同
@@ -103,32 +103,30 @@ export const lte = (x, y) => x <= y;
  * @param { Object } object
  * @param { String } key
  */
-export const Has = (object, key) => (
-  object != null && Object.hasOwnProperty.call(object, key)
-);
+export const Has = (object, key) =>
+  object != null && Object.hasOwnProperty.call(object, key);
 
 /**
  * 添加斜線
  * @param { String } str
  */
-export const Slash = (str = '') => `/${str}`;
+export const Slash = (str = "") => `/${str}`;
 
 /**
  * 合併字串
  * @param { String } str
  */
-export const MergeStr = (...str) => str.reduce((prev, curr) => prev += curr);
+export const MergeStr = (...str) => str.reduce((prev, curr) => (prev += curr));
 
 /**
  * 檢查是否為Number
  * @param { Number } num
  */
-export const isNumber = num => (
-  !(isNaN(num)) &&
-  (typeof num !== 'object') &&
-  (num !== Number.POSITIVE_INFINITY) &&
-  (num !== Number.NEGATIVE_INFINITY)
-);
+export const isNumber = num =>
+  !isNaN(num) &&
+  typeof num !== "object" &&
+  num !== Number.POSITIVE_INFINITY &&
+  num !== Number.NEGATIVE_INFINITY;
 
 /**
  * 檢查是否為空
@@ -147,7 +145,7 @@ export const isEmpty = value => {
     // }
     return !value.length;
   }
-  if (typeof value === 'string') return !value.length;
+  if (typeof value === "string") return !value.length;
   if (isObject(value)) return !Object.keys(value).length;
   if (!isNaN(value)) return false;
   return true;
@@ -171,9 +169,11 @@ export const RemoveEmptyValues = obj => {
  * @param { Object } obj
  */
 export const ToQuerystr = obj => {
-  if (!obj) return '';
+  if (!obj) return "";
   obj = RemoveEmptyValues(obj);
-  return `?${Object.entries(obj).map(([key, val]) => `${key}=${val}`).join('&')}`;
+  return `?${Object.entries(obj)
+    .map(([key, val]) => `${key}=${val}`)
+    .join("&")}`;
 };
 
 /**
@@ -188,7 +188,9 @@ const Nesting = (Roles, ArrayVal, Obj, role, key) => {
     return ArrayVal.map(v => `${v}_${key}`);
   }
   const [SameKey] = intersectwith(equals, Roles, ArrayVal);
-  const NewArrayVal = ArrayVal.filter(val => val !== SameKey).concat(Obj[SameKey][key]);
+  const NewArrayVal = ArrayVal.filter(val => val !== SameKey).concat(
+    Obj[SameKey][key]
+  );
   return Nesting(Roles, NewArrayVal, Obj, role, key);
 };
 
@@ -202,7 +204,9 @@ export const factory = Obj => {
   Roles.forEach(role => {
     GrantsObj[role] = [];
     Object.keys(Obj[role]).forEach(key => {
-      GrantsObj[role] = GrantsObj[role].concat(Nesting(Roles, Obj[role][key], Obj, role, key));
+      GrantsObj[role] = GrantsObj[role].concat(
+        Nesting(Roles, Obj[role][key], Obj, role, key)
+      );
     });
   });
   return GrantsObj;

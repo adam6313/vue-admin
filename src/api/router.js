@@ -1,3 +1,3 @@
 export default {
-  LOGIN: '/login',
+  LOGIN: "/login"
 };
