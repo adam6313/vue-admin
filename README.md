@@ -1,4 +1,4 @@
-# game-service-office
+# vue-admin
 
 ## Project setup
 ```
